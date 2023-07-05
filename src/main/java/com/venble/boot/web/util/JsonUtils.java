@@ -1,10 +1,7 @@
-package com.venble.boot.common.util;
+package com.venble.boot.web.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -12,11 +9,10 @@ import java.util.List;
  */
 public final class JsonUtils {
 
-    private static final ObjectMapper objectMapper = new ObjectMapper();
+    private static final ObjectMapper objectMapper;
 
     static {
-        objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
-        objectMapper.registerModule(new JavaTimeModule());
+        objectMapper = SpringContextUtils.getBean(ObjectMapper.class);
     }
 
     /**
