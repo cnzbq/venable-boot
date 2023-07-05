@@ -53,3 +53,8 @@ application:
     token-expiry-in-seconds: 86400
     ignore-ant-patterns:
       - /webjars/**
+
+logging:
+  level:
+    ROOT: INFO
+    com.venble.boot: INFO
