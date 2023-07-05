@@ -53,3 +53,7 @@ application:
     token-expiry-in-seconds: 86400
     ignore-ant-patterns:
       - /webjars/**
+
+logging:
+  level:
+    org.hibernate.orm.jdbc.bind: TRACE
